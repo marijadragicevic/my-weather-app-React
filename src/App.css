@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Cutive+Mono&family=Fredoka+One&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Quicksand:wght@300;400;500;600&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300;1,400&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&family=Ubuntu:wght@300&family=Work+Sans:wght@300&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #555;
+  font-family:"Raleway";
+  font-weight:500 ;
+  font-size: 1.02rem;
+}
+:root {
+  --backgRed:rgb(228, 124, 76);
+  --borderRed:rgb(243, 112, 52);
+  --focusOrange:rgb(255, 182, 47);
+}
+body{
+  background-color: #eee;
+}
+.App {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+}
+.searchForm{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20vh;
+  background-color: var(--backgRed);
+  padding: 30px;
+}
+.searchForm input[type="text"]{
+  flex: 0 0 60%;
+  border: 1px solid var(--borderRed);
+  border-radius: 50px 0px 0px 50px;
+  padding: 10px 15px;
+}
+.searchForm input[type="text"]:focus{
+  outline: none;
+  border: 3px solid var(--focusOrange);
+  transition:0.3s ease;
+}
+.searchForm input[type="submit"]{
+  color: white;
+  border: 1px solid var(--borderRed);
+  border-radius: 0px 50px 50px 0px;
+  padding: 10px 15px;
+  background-color:rgb(223, 82, 30)
+}
+.searchForm input[type="submit"]:hover{
+  background-color: rgb(180, 59, 43);
+  transition: 0.3s ease;
+}
