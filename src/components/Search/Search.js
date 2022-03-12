@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const Search = ({ handleCitySearch }) => {
     const [city, setCity] = useState("");
 

@@ -1,4 +1,7 @@
+/* import font */
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Cutive+Mono&family=Fredoka+One&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Quicksand:wght@300;400;500;600&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300;1,400&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&family=Ubuntu:wght@300&family=Work+Sans:wght@300&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap');
+
+/* default style */
 *{
   padding: 0;
   margin: 0;
@@ -6,21 +9,26 @@
   color: #555;
   font-family:"Raleway";
   font-weight:500 ;
-  font-size: 1.02rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
+body{
+  background-color: #eee;
+}
+
+.App{
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* variables */
 :root {
   --backgRed:rgb(228, 124, 76);
   --borderRed:rgb(243, 112, 52);
   --focusOrange:rgb(255, 182, 47);
 }
-body{
-  background-color: #eee;
-}
-.App {
-  text-align: center;
-  width: 60%;
-  margin: 0 auto;
-}
+
+/* Form Section */
 .searchForm{
   display: flex;
   justify-content: flex-end;
@@ -45,9 +53,181 @@ body{
   border: 1px solid var(--borderRed);
   border-radius: 0px 50px 50px 0px;
   padding: 10px 15px;
-  background-color:rgb(223, 82, 30)
+  background-color:rgb(223, 82, 30);
 }
 .searchForm input[type="submit"]:hover{
   background-color: rgb(180, 59, 43);
   transition: 0.3s ease;
+}
+
+/* WeatherList,WeatherItem section */
+.weatherList{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.weatherList .weatherItem{
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+}
+.weatherList .weatherItem:hover{
+  box-shadow: 0px 0px 10px #444;
+  transition: 0.3s ease;
+}
+.weatherList .weatherItem img{
+  height: 15vh;
+}
+.weatherList .weatherItem div  {
+  flex: 0 0 75%;
+}
+.weatherList .weatherItem div article a{
+  font-size: 1.5rem;
+  color: var(--backgRed);
+  text-decoration: none;
+  padding-right: 10px;
+}
+.weatherList .weatherItem div article a:hover{
+  color: rgb(180, 59, 43);
+ text-decoration: underline;
+}
+.weatherList .weatherItem div article span{
+  font-size: 1.3rem;
+  padding: 0px 5px;
+}
+.weatherList .weatherItem div article .flag{
+  box-shadow: 0 0 5px #eee;
+  padding: 0px 5px 5px;
+}
+.weatherList .weatherItem div article .temp{
+  background-color: #bbb;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+.weatherList .weatherItem div .geoCoords{
+  font-size: 1.2rem;
+  padding-top: 10px;
+}
+.weatherList .weatherItem div .geoCoords span{
+  color: var(--backgRed);
+}
+
+/* WeatherDetails Section */
+.cards{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 85vh;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.cards .timeWeather{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 40px;
+  background-color: white;
+  padding-bottom: 5px ;
+}
+.cards .timeWeather .date{
+  display: none;
+}
+.cards .timeWeather:nth-child(4n){
+  margin-bottom: 30px;
+}
+.cards .timeWeather:nth-child(4n-3) .date:nth-child(1){
+  display: block;
+  background-color: var(--backgRed);
+  color: white;
+  flex: 0 0 100%;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+/* Header Section */
+ button{
+  border: none;
+  background: rgb(226, 122, 53);
+  padding: 5px 25px;
+  border-radius: 2px;
+  color: white;
+  font-size: 1.2rem;
+  margin: 0px 0px 20px 20px;
+}
+ h2{
+  font-size: 1.5rem;
+  background: linear-gradient(0.33turn, #3f87a6, #e4e4e4, #f69d3c);
+  padding: 5px 15px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: white;
+}
+h2 img{
+  margin:0px 0px 8px 15px;
+}
+.container{
+  background-color: white;
+  box-shadow: 0 0 10px #bbb;
+}
+
+@media (max-width:768px) {
+  .App{
+    width: 100%;
+  }
+
+  /* Form Section */
+  .searchForm{
+    height: 15vh;
+    padding: 0;
+    justify-content: center;
+  }
+  .searchForm input[type="text"]{
+    width: 50%;
+    padding: 5px 10px;
+    font-size: 1rem;
+  }
+  .searchForm input[type="submit"]{
+    padding: 5px 10px;
+  }
+
+  /* WeatherList,WeatherItem Section */
+  .weatherList .weatherItem{
+    padding: 0;
+  }
+  .weatherList .weatherItem img{
+    height: 13vh;
+  }
+  .weatherList .weatherItem div article span{
+    font-size: 1.1rem;
+  }
+  .weatherList .weatherItem div .geoCoords, .geoCoords span{
+    font-size: 1rem;
+  }
+
+  /* WeatherDetails */
+  .cards{
+    height: 100%;
+    flex-wrap: nowrap;
+  }
+  .cards .timeWeather{
+    margin: 0;
+    padding-bottom: 5px ;
+  }
+  .cards .timeWeather:nth-child(4n){
+    margin-bottom: 10px;
+  }
+  /* .cards .timeWeather:nth-child(4n-3) .date:nth-child(1){
+    display: block;
+    background-color: var(--backgRed);
+    color: white;
+    flex: 0 0 100%;
+    padding: 5px;
+    font-size: 1.2rem;
+  } */
 }

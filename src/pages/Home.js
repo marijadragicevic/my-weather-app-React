@@ -3,27 +3,30 @@ import API from "../config/api";
 import { ApiKey } from "../config/apiKey";
 import Search from "../components/Search/Search";
 import WeatherList from "../components/Weather/WeatherList";
+import Error from "../components/Error/Error";
 
 const Home = () => {
     const [data, setData] = useState([]);
 
     const handleCitySearch = async (city) => {
-        let d = await API.get(`geo/1.0/direct?q=${city}&limit=5&units=metric&appid=${ApiKey}`)
-        console.log(d);
+        let d = await API.get(`geo/1.0/direct?q=${city}&limit=5&units=metric&appid=${ApiKey}`);
         setData(d.data);
+        localStorage.setItem("city", city);
     };
-    // console.log(data);
+
     useEffect(() => {
-        handleCitySearch("Krusevac");
+        handleCitySearch(localStorage.city);
     }, []);
 
     return (
         <div className="home">
             <Search handleCitySearch={handleCitySearch} />
-            <WeatherList data={data} />
 
-        </div>
-    );
+            {data.length !== 0
+                ? <WeatherList data={data} />
+                : <Error />}
+
+        </div>);
 };
 
 export default Home;
