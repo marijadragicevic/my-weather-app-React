@@ -11,11 +11,10 @@ const Home = () => {
     const handleCitySearch = async (city) => {
         let d = await API.get(`geo/1.0/direct?q=${city}&limit=5&units=metric&appid=${ApiKey}`);
         setData(d.data);
-        localStorage.setItem("city", city);
     };
 
     useEffect(() => {
-        handleCitySearch(localStorage.city);
+        handleCitySearch(city);
     }, []);
 
     return (
