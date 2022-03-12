@@ -4,7 +4,7 @@ import spinner from "../../img/spinner.svg";
 const Loading = () => {
     return (
         <div>
-            <img src={spinner} />
+            <img src={spinner} alt="Loading" />
         </div>
     );
 }

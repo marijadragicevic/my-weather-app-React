@@ -51,7 +51,7 @@ const WeatherDetails = () => {
                             {li.dt_txt.slice(0, 10)}.
                         </p>
                         <p className='time'>{li.dt_txt.slice(10, 16)} h</p>
-                        <img src={REACT_APP_ICON_URL + li.weather[0].icon + ".png"} />
+                        <img src={REACT_APP_ICON_URL + li.weather[0].icon + ".png"} alt="Weather icon" />
                         <p className='temperature'>temp {li.main.temp} °C </p>
                     </article>)
                     )

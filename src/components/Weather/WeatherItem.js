@@ -25,7 +25,7 @@ const WeatherItem = ({ lat, lon }) => {
         <>
             {weather
                 ? (<section className='weatherItem'>
-                    <img src={REACT_APP_ICON_URL + weather.weather[0].icon + ".png"} />
+                    <img src={REACT_APP_ICON_URL + weather.weather[0].icon + ".png"} alt="Weather Icon" />
                     <div>
                         <article>
                             <Link to={`/weatherDetails/:${weather.coord.lat}/:${weather.coord.lon}`}>
