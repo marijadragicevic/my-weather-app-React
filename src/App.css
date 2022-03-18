@@ -54,6 +54,7 @@ body{
   border-radius: 0px 50px 50px 0px;
   padding: 10px 15px;
   background-color:rgb(223, 82, 30);
+  flex: 0 0 20%;
 }
 .searchForm input[type="submit"]:hover{
   background-color: rgb(180, 59, 43);

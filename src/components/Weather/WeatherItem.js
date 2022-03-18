@@ -9,7 +9,7 @@ const WeatherItem = ({ lat, lon }) => {
     const [weather, setWeather] = useState("");
 
     const handleWeatherSearch = async (lat, lon) => {
-        await API.get(`data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&limit=1&appid=${ApiKey}`)
+        await API.get(`data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${ApiKey}`)
             .then((res) => {
                 if (res.status === 200) {
                     setWeather(res.data);

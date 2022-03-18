@@ -11,8 +11,8 @@ function App() {
       <Router>
 
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/weatherDetails/:lat/:lon' element={<WeatherDetails />} />
+          <Route path='/' element={< Home />} />
+          <Route path='/weatherDetails/:lat/:lon' element={< WeatherDetails />} />
         </Routes>
 
       </Router>
