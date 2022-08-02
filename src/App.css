@@ -223,12 +223,5 @@ h2 img{
   .cards .timeWeather:nth-child(4n){
     margin-bottom: 10px;
   }
-  /* .cards .timeWeather:nth-child(4n-3) .date:nth-child(1){
-    display: block;
-    background-color: var(--backgRed);
-    color: white;
-    flex: 0 0 100%;
-    padding: 5px;
-    font-size: 1.2rem;
-  } */
+
 }

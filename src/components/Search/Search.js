@@ -9,18 +9,14 @@ const Search = ({ handleCitySearch }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        if (city === "") {
-            alert("Wrong input!")
-        }
-        else {
-            handleCitySearch(city);
-        }
+
+        handleCitySearch(city);
         setCity("");
     }
 
     return (
         <form className='searchForm' onSubmit={handleSubmit}>
-            <input type="text" value={city} placeholder='Enter the name of the city' onChange={handleChange} />
+            <input type="text" value={city} placeholder='Enter the name of the city' onChange={handleChange} required />
             <input type="submit" />
         </form>);
 }
